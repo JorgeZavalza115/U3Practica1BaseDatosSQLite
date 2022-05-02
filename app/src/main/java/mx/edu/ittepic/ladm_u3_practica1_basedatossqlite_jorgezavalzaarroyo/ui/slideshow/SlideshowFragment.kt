@@ -59,7 +59,11 @@ class SlideshowFragment : Fragment() {
             val asignacion = Asignacion(requireContext()).selectAsignacion(idLista)
             AlertDialog.Builder(requireContext())
                 .setTitle("Atención")
-                .setMessage("¿Qué desea hacer con la asignación de: con: ${asignacion.nombreempleado}?")
+                .setMessage("¿Qué desea hacer con\n" +
+                        "Empleado: ${asignacion.nombreempleado}\n" +
+                        "Area: ${asignacion.areatrabajo}\n" +
+                        "Fecha: ${asignacion.fecha}\n" +
+                        "Código: ${asignacion.codigobarras}?")
                 .setNegativeButton("Eliminar"){ d, i ->
                     asignacion.eliminar()
                     mostrarDatosLista()

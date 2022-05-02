@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarMain.toolbar)
 
         binding.appBarMain.fab.setOnClickListener { view ->
-            Toast.makeText(this, "Have a nice day", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Have a nice day c:", Toast.LENGTH_LONG).show()
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

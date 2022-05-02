@@ -60,7 +60,10 @@ class GalleryFragment : Fragment() {
             val equipo = Inventario(requireContext()).selectEquipo(codigoLista)
             AlertDialog.Builder(requireContext())
                 .setTitle("Atención")
-                .setMessage("¿Qué desea hacer con el equipo: ${equipo.tipoequipo}?")
+                .setMessage("¿Qué desea hacer con\nCodigo: ${equipo.codigobarras}\n" +
+                        "Equipo: ${equipo.tipoequipo}\n" +
+                        "Caracteristicas: ${equipo.caracteristicas}\n" +
+                        "Fecha: ${equipo.fechacompra}?")
                 .setNegativeButton("Eliminar"){ d, i ->
                     val asignacion = Asignacion(requireContext()).triggerCodigoEliminado(equipo.codigobarras)
                     equipo.eliminar()
